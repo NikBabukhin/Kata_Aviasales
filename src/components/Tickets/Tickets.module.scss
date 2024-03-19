@@ -1,0 +1,17 @@
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Open-Sans', sans-serif;
+
+}
+
+.button {
+  text-transform: uppercase;
+  background-color: #2196F3;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Open-Sans', sans-serif;
+  height: 50px;
+  letter-spacing: 0.5px;
+}

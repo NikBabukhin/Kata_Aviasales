@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import style from './App.module.scss';
+import {Checkboxes} from "./components/Checkboxes/Checkboxes";
+import {SortButtons} from "./components/SortButtons/SortButtons";
+import {Tickets} from "./components/Tickets/Tickets";
+import {Logo} from "./components/Logo/Logo";
+import {fetchSearchId} from "./store/ticketsSlice/ticketsActions";
+import {RootState, useAppDispatch} from "./store/store";
+import {useSelector} from "react-redux";
+import {LoadingSpin} from "./components/Loading/LoadingSpin";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+    const dispatch = useAppDispatch()
+    const searchId = useSelector<RootState>(state => state.tickets.searchId)
+
+    useEffect(() => {
+        dispatch(fetchSearchId())
+    }, [dispatch])
+
+    return (
+        <div className={style.app}>
+            <Logo/>
+            {(!searchId) ? <LoadingSpin/> :
+                <>
+                    <div className={style.control}>
+                        <Checkboxes/>
+                    </div>
+                    <div className={style.payload}>
+                        <SortButtons/>
+                        <Tickets/>
+                    </div>
+                </>
+            }
+        </div>
+    );
 }
 
-export default App;

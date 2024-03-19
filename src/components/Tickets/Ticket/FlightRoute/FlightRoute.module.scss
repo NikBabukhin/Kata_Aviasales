@@ -1,0 +1,29 @@
+.route {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Open-Sans', sans-serif;
+  padding-bottom: 10px;
+}
+
+.wrapper {
+  width: 140px;
+}
+
+.header {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #A0B0B9;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+
+.value {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+  color: #4A4A4A;
+}

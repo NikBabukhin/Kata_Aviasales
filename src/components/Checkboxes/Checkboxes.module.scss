@@ -1,0 +1,31 @@
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open-Sans', sans-serif;
+}
+
+.card {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+  border-radius: 5px;
+  min-width: 232px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  padding: 20px 0 10px 0;
+}
+
+.header {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #4A4A4A;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.checkbox {
+  &:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+  }
+}
